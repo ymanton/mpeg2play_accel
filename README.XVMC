@@ -1,0 +1,85 @@
+/*
+ * All modifications (mpeg2decode -> mpeg2play) are
+ * Copyright (C) 1994, Stefan Eckart. All Rights Reserved.
+ */
+
+/* Copyright (C) 1994, MPEG Software Simulation Group. All Rights Reserved. */
+
+/*
+ * Disclaimer of Warranty
+ *
+ * These software programs are available to the user without any license fee or
+ * royalty on an "as is" basis.  The MPEG Software Simulation Group disclaims
+ * any and all warranties, whether express, implied, or statuary, including any
+ * implied warranties or merchantability or of fitness for a particular
+ * purpose.  In no event shall the copyright-holder be liable for any
+ * incidental, punitive, or consequential damages of any kind whatsoever
+ * arising from the use of these programs.
+ *
+ * This disclaimer of warranty extends to the user of these programs and user's
+ * customers, employees, agents, transferees, successors, and assigns.
+ *
+ * The MPEG Software Simulation Group does not represent or warrant that the
+ * programs furnished hereunder are free of infringement of any third-party
+ * patents.
+ *
+ * Commercial implementations of MPEG-1 and MPEG-2 video, including shareware,
+ * are subject to royalty fees to patent holders.  Many of these patents are
+ * general enough such that they are unavoidable regardless of implementation
+ * design.
+ *
+ */
+
+/* XvMC modifications added by Mark Vojkovich <markv@XFree86.org> */
+
+/*
+    DISCLAIMER of suitability for just about everything.
+
+    This software is a modification of mpeg2play which features
+the copyrights above.  This was modified as a sample usage of
+the X-Video Motion Compensation (XvMC) extension.  It is not
+a reference example.  It is merely a sample usage and as such
+is not guaranteed to be functionally correct in any aspect.  
+It is provide AS IS with NO WARRANTY either express or implied. 
+There is no claim that these modifications are free of infringement 
+of any third-party patents.  In no event shall Mark Vojkovich be liable 
+for any incidental, punitive, or consequential damages of any kind 
+whatsoever arising from the use of this software.
+
+    This software was modified as an educational exercise and
+no claims are made about this software's suitability for any
+purpose what-so-ever.
+
+    Please pay attention to the MPEG Software Simulation Group's
+comment above about commerical implementations.  
+
+    Legalese aside, performance was not a goal of this modification.
+Simplicity and correctness (and remember that there is no guarantee
+of either) were more important than performance.
+
+  HISTORY:
+
+    10-26-2001 - Original hack.
+    11-14-2001 - Added IDCT level acceleration support.
+                 Fixed a bug with looping (-l).
+     3-10-2002 - Fixed bugs with interleaved streams.
+     4-20-2002 - Fixed dualprime bugs.
+                 Added support for High Definition streams.
+                 Added hackish support for dlopening vendor specific
+                 XvMC modules. 
+     4-27-2002 - Added support for bobbing (-b).
+     5-04-2002 - Tries to use five surfaces instead of four (compile-time
+                 define lets it try to allocate as many as you wish, but
+                 at least four must succeed).
+    12-29-2002 - Removed support for two-file streams because I've never
+                 seen one and it was making it difficult to optimized.
+                 Added some substantial optimizations to the bit handling
+                 infrastructure (approx 25% faster now).
+     9-27-2003 - Added option to build with OpenGL as the display mechanism.
+                 It's a texture and you can move it with the mouse (see 
+                 Makefile). Also fixed some clipping problems when the
+                 horizontal/vertical_size is smaller than the 
+                 coded_picture_width/height.
+     2-04-2004 - Added support for the GL_NV_fence extension when in OpenGL
+                 mode.
+*/
