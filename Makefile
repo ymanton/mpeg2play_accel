@@ -34,10 +34,11 @@
 # use static
 
 # STATIC_LIB = -lXvMCNVIDIA
+ STATIC_LIB = -lXvMCW
 
 # use dynamic
 
- USE_DLOPEN = -DUSE_DLOPEN -DDLFILENAME="\"libXvMCNVIDIA_dynamic.so.1\""
+# USE_DLOPEN = -DUSE_DLOPEN -DDLFILENAME="\"libXvMCNVIDIA_dynamic.so.1\""
 
 
 # uncomment the following two lines if you want to use shared memory
